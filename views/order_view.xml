@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- catering.order tree view -->
+    <record id="catering_order_view_tree" model="ir.ui.view">
+        <field name="name">Catering Order</field>
+        <field name="model">catering.order</field>
+        <field name="arch" type="xml">
+        
+            <tree>
+            
+                <!-- Add your fields here -->
+                <field name="name"/>   
+                <field name="pemesan"/> 
+                <field name="tanggal_pesan"/> 
+                <field name="tanggal_pengiriman"/>           
+                <field name="total"/>     
+                <field name="sudah_bayar"/>                            
+                <field name="orderjnscateringdetail_ids"/>
+                <field name="orderjnsmakanandetail_ids"/>
+                <field name="orderjnsminumandetail_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- catering.order form view -->
+    <record id="catering_order_view_form" model="ir.ui.view">
+        <field name="name">Form Order</field>
+        <field name="model">catering.order</field>
+        <field name="arch" type="xml">
+        
+            <form string="Order Detail">
+            
+                <sheet>                
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/> 
+                        <field name="pemesan"/> 
+                        <field name="tanggal_pesan"/>
+                        <field name="tanggal_pengiriman"/>
+                        <field name="total"/>   
+                        <field name="sudah_bayar"/>                         
+                        <field name="orderjnscateringdetail_ids">
+                            <tree editable='bottom'>
+                                <field name="jnscatering_id"/>
+                                <field name="deskripsi"/>    
+                                <field name="harga_satuan"/> 
+                                <field name="qty"/> 
+                                <field name="harga" sum="Total"/>                                        
+                            </tree>
+                        </field>      
+                        <field name="orderjnsmakanandetail_ids">
+                            <tree editable='bottom'>
+                                <field name="jnsmakanan_id"/>  
+                                <field name="deskripsi"/>    
+                                <field name="harga_satuan"/> 
+                                <field name="qty"/> 
+                                <field name="harga" sum="Total"/>                                        
+                            </tree>
+                        </field>     
+                        <field name="orderjnsminumandetail_ids">
+                            <tree editable='bottom'>
+                                <field name="jnsminuman_id"/>
+                                <field name="deskripsi"/>      
+                                <field name="harga_satuan"/> 
+                                <field name="qty"/> 
+                                <field name="harga" sum="Total"/>                                        
+                            </tree>
+                        </field>                                                 
+                    </group> 
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- catering_order_action action window -->
+    <record id="catering_order_action" model="ir.actions.act_window">
+        <field name="name">Order Catering</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">catering.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="catering_order_menu_act" 
+        name="Order Catering" 
+        parent="catering_order_menu_categ" 
+        action="catering_order_action" 
+        sequence="10"/>
+
+</odoo>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- model.name tree view -->
+    <record id="catering_jnsmakanan_view_tree" model="ir.ui.view">
+        <field name="name">Jenis makanan</field>
+        <field name="model">catering.jnsmakanan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="tipe"/>
+                <field name="stok"/>
+                <field name="harga"/>
+                <field name="deskripsi"/>
+            </tree>
+        </field>
+    </record>
+
+ <!-- catering.panggung form view -->
+    <record id="catering_jnsmakanan_view_form" model="ir.ui.view">
+        <field name="name">Form Jenis Makanan</field>
+        <field name="model">catering.jnsmakanan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="tipe"/>
+                        <field name="harga"/>
+                        <field name="stok"/>
+                    </group>
+                    <group>
+                    <field name="deskripsi"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- catering.panggung action window -->
+    <record id="catering_jnsmakanan_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis Makanan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">catering.jnsmakanan</field>
+        <field name="view_mode">tree,form</field>        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="catering_jnsmakanan_menu_act" 
+        name="Jenis Makanan" 
+        parent="catering_akomodasi_menu_categ" 
+        action="catering_jnsmakanan_action" 
+        sequence="30"/>
+
+</odoo>

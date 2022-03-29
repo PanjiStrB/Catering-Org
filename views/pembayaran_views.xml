@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- catering.pembayaran tree view -->
+    <record id="catering_pembayaran_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Pembayaran Catering</field>
+        <field name="model">catering.pembayaran</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="order_id"/>
+                <field name="name"/>             
+                <field name="tagihan"/> 
+                <field name="tgl_pembayaran"/>      
+            </tree>
+        </field>
+    </record>
+
+    <!-- catering.pembayaran form view -->
+    <record id="catering_pembayaran_view_form" model="ir.ui.view">
+        <field name="name">Pembayaran Catering</field>
+        <field name="model">catering.pembayaran</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="order_id"/>
+                        <field name="name"/>
+                    </group>
+                     <group>                        
+                        <field name="tgl_pembayaran"/>
+                    </group>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="tagihan"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- catering.pembayaran action window -->
+    <record id="catering_pembayaran_action" model="ir.actions.act_window">
+        <field name="name">Pembayaran Catering</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">catering.pembayaran</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="catering_pembayaran_menu_act" 
+        name="Pembayaran Catering" 
+        parent="catering_order_menu_categ" 
+        action="catering_pembayaran_action" 
+        sequence="20"/>
+
+</odoo>

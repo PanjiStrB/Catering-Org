@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_catering_jnscatering,access.catering.jnscatering,model_catering_jnscatering,,1,1,1,1
+access_catering_jnsmakanan,access.catering.jnsmakanan,model_catering_jnsmakanan,,1,1,1,1
+access_catering_jnsminuman,access.catering.jnsminuman,model_catering_jnsminuman,,1,1,1,1
+access_catering_order,access.catering.order,model_catering_order,,1,1,1,1
+access_catering_orderjnscateringdetail,access.catering.orderjnscateringdetail,model_catering_orderjnscateringdetail,,1,1,1,1
+access_catering_orderjnsmakanandetail,access.catering.orderjnsmakanandetail,model_catering_orderjnsmakanandetail,,1,1,1,1
+access_catering_orderjnsminumandetail,access.catering.orderjnsminumandetail,model_catering_orderjnsminumandetail,,1,1,1,1
+access_catering_pembayaran,access.catering.pembayaran,model_catering_pembayaran,,1,1,1,1
+access_catering_akunting,access.catering.akunting,model_catering_akunting,,1,1,1,1
+

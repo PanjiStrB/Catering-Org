@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- model.name tree view -->
+    <record id="catering_jnscatering_view_tree" model="ir.ui.view">
+        <field name="name">Jenis Catering</field>
+        <field name="model">catering.jnscatering</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="deskripsi"/>
+                <field name="harga"/>
+            </tree>
+        </field>
+    </record>
+
+ <!-- catering.panggung form view -->
+    <record id="catering_jnscatering_view_form" model="ir.ui.view">
+        <field name="name">Form Jenis Catering</field>
+        <field name="model">catering.jnscatering</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="harga"/>
+                        <field name="deskripsi"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- catering.panggung action window -->
+    <record id="catering_jnscatering_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis Catering</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">catering.jnscatering</field>
+        <field name="view_mode">tree,form</field>        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="catering_jnscatering_menu_act" 
+        name="Jenis Catering" 
+        parent="catering_akomodasi_menu_categ" 
+        action="catering_jnscatering_action" 
+        sequence="20"/>
+
+</odoo>
