@@ -30,7 +30,8 @@ class Order(models.Model):
     tanggal_pengiriman = fields.Date(string='Tanggal Pengiriman', default=fields.Date.today())
     total = fields.Integer(compute='_compute_total', string='Total', store=True)
     sudah_bayar = fields.Boolean(string='Sudah Dibayarkan', default=False)
-
+    tipecatering = fields.Selection(string='Tipe Catering', selection=[('acarabesar', 'Acara Besar'), ('box', 'Box'),])
+    
     @api.depends('orderjnscateringdetail_ids')
     def _compute_total(self):
         for record in self:
@@ -75,7 +76,7 @@ class OrderJnsMakananDetail(models.Model):
     _name = 'catering.orderjnsmakanandetail'
     _description = 'New Description'
     
-    orderk_id = fields.Many2one(comodel_name='catering.order', string='Order Kursi')
+    orderk_id = fields.Many2one(comodel_name='catering.order', string='Order Makanan')
     deskripsi = fields.Char(compute='_compute_deskripsi', string='Deskripsi')
     jnsmakanan_id = fields.Many2one(
         comodel_name='catering.jnsmakanan', 
