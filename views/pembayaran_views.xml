@@ -14,7 +14,7 @@
             </tree>
         </field>
     </record>
-
+    
     <!-- catering.pembayaran form view -->
     <record id="catering_pembayaran_view_form" model="ir.ui.view">
         <field name="name">Pembayaran Catering</field>

@@ -17,11 +17,12 @@
     </record>
 
     <record id="catering_akunting_graph" model="ir.ui.view">
-        <field name="name">catering akunting graph</field>
+        <field name="name">Akunting Graph</field>
         <field name="model">catering.akunting</field>
         <field name="arch" type="xml">
             <graph string="Akunting Graph" >
                 <field name="date" />
+                <field name="name"/>
                 <field name="kredit" type="measure"/>
             </graph>
         </field>
