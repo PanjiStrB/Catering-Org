@@ -9,3 +9,7 @@ class Jnsminuman(models.Model):
     deskripsi = fields.Char(string='Deskripsi Jenis Minuman')
     stok = fields.Integer(string='Stok Minuman')
     harga = fields.Integer(string='Harga Minuman')
+    image = fields.Binary(
+        string='image',
+    )
+    

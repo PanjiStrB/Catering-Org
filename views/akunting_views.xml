@@ -9,21 +9,32 @@
                 <!-- Add your fields here -->
                 <field name="name"/>
                 <field name="date"/>
-                <field name="debet"/>
                 <field name="kredit"/>
                 <field name="saldo"/>
                 
             </tree>
         </field>
     </record>
+
+    <record id="catering_akunting_graph" model="ir.ui.view">
+        <field name="name">catering akunting graph</field>
+        <field name="model">catering.akunting</field>
+        <field name="arch" type="xml">
+            <graph string="Akunting Graph" >
+                <field name="date" />
+                <field name="kredit" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
     <!-- catering.akunting action window -->
     <record id="catering_akunting_action" model="ir.actions.act_window">
         <field name="name">Akunting Catering</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">catering.akunting</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,graph</field>
     </record>
-
+    
     <!-- This Menu Item must have a parent and an action -->
     <menuitem 
         id="catering_akunting_menu_act" 

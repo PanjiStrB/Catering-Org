@@ -10,3 +10,6 @@ class Jnsmakanan(models.Model):
     deskripsi = fields.Char(string='Deskripsi Jenis Makanan')
     stok = fields.Integer(string='Stok Makanan')
     harga = fields.Integer(string='Harga Makanan')
+    image = fields.Binary(
+        string='image',
+    )

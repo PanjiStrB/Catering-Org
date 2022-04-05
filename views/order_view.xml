@@ -31,7 +31,7 @@
         
             <form string="Order Detail">
             
-                <sheet>                
+                <sheet>
                     <group>
                         <!-- Add your fields here -->
                         <field name="name"/> 
