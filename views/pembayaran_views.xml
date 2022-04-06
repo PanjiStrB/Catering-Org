@@ -14,7 +14,17 @@
             </tree>
         </field>
     </record>
-    
+
+    <record id="catering_pembayaran_calendar" model="ir.ui.view">
+        <field name="name">Calender Pembayaran</field>
+        <field name="model">catering.pembayaran</field>
+        <field name="arch" type="xml">
+            <calendar string="Calender Pembayaran" date_start="tgl_pembayaran" color="order_id" >
+                <field name="name" />
+                <field name="tagihan"/>
+            </calendar>
+        </field>
+    </record>
     <!-- catering.pembayaran form view -->
     <record id="catering_pembayaran_view_form" model="ir.ui.view">
         <field name="name">Pembayaran Catering</field>
@@ -32,8 +42,7 @@
                     </group>
                     <group>
                         <!-- Add your fields here -->
-                        <field name="tagihan"/>
-                        
+                        <field name="tagihan"/>                    
                     </group>
                 </sheet>
             </form>
@@ -45,7 +54,7 @@
         <field name="name">Pembayaran Catering</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">catering.pembayaran</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,calendar</field>
     </record>
 
     <!-- This Menu Item must have a parent and an action -->

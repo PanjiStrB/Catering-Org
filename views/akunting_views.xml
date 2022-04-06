@@ -28,6 +28,7 @@
         </field>
     </record>
 
+   
     <!-- catering.akunting action window -->
     <record id="catering_akunting_action" model="ir.actions.act_window">
         <field name="name">Akunting Catering</field>
